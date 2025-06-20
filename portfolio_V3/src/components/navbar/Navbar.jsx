@@ -16,7 +16,6 @@ function Navbar() {
   return (
     <>
     <div className="outerDiv">
-        <ul>
             {
             NavbarRoutes.map(link => (
                 <li key={link.name} className="navbar_routes">
@@ -24,7 +23,6 @@ function Navbar() {
                 </li>
             ))
             }
-        </ul>
     </div>
     
     </>

@@ -1,3 +1,16 @@
 .outerDiv{
     background: black;
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+    justify-content: center;
+    padding: 10px;
+}
+
+.navbar_routes{
+    font-size: 50px;
+}
+
+a{
+    text-decoration: none;
 }
