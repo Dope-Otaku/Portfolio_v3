@@ -2,15 +2,17 @@
     background: black;
     display: flex;
     flex-direction: row;
-    height: 20vh;
+    height: 10vh;
     justify-content: center;
     padding: 10px;
 }
 
 .navbar_routes{
-    font-size: 50px;
+    font-size: 20px;
+    margin-top: 15px;
 }
 
 a{
     text-decoration: none;
+    color: white;
 }
