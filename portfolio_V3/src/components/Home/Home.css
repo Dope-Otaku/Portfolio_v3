@@ -1,0 +1,23 @@
+.outerBox{
+    background-color: red;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.imageMeta{
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.summaryMeta{
+    margin: 10px;
+    /* text-align: right; */
+    text-align: justify;
+    margin-left: 20px;
+
+}
