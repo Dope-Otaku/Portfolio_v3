@@ -1,19 +1,19 @@
 const express = require("express");
-const Quote = require('inspirational-quotes');
+const cors = require("cors");
+const Quote = require("inspirational-quotes");
 const app = express();
-// let port = 8081;
 
+app.use(cors({
+  origin: "http://localhost:5173" 
+}));
 
 app.get("/", function(req, res) {
   res.send(Quote.getQuote());
 });
-// let port = process.env.PORT;
-let port = 8080
-console.log(port)
 
-if(port == null || port == "") {
- port = 5000;
-}
+// Define the port
+let port = process.env.PORT || 8080;
+
 app.listen(port, () => {
- console.log("Server started successfully");
+  console.log(`Server started successfully on port ${port}`);
 });
