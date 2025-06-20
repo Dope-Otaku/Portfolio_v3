@@ -1,12 +1,10 @@
 import Navbar from "./components/navbar/Navbar"
+import Footer from "./components/Footer/Footer"
 import { Link } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import Home from "./components/Home/Home"
-// import About from './components/About'
-// import Projects from './components/Projects'
-// import Resume from './components/Resume'
-// import Jewelry from './components/Jewelry'
-// import Contact from './components/Contact'
+import TechStack from "./components/TechStacks/TechStack"
+import Project from "./components/Projects/Project"
 
 
 function App() {
@@ -16,6 +14,9 @@ function App() {
     <>
     <Navbar/>
     <Home/>
+    <TechStack />
+    <Project/>
+    <Footer/>
     </>
   )
 }
