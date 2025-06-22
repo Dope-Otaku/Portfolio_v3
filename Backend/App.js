@@ -14,6 +14,10 @@ app.get("/", function(req, res) {
 // Define the port
 let port = process.env.PORT || 8080;
 
+if (!port){
+  console.log("port not found!")
+}
+
 app.listen(port, () => {
   console.log(`Server started successfully on port ${port}`);
 });
