@@ -1,6 +1,3 @@
-## this is just a readme file!
+# portfolio update in progress
 
-# step 1:
- - we will be desingning a simple sketch of frontend and backend 
- - frontend: react, etc
- -  backend: nodejs
+- [Earlier version of our portfolio](https://3d-portv1.vercel.app/)
