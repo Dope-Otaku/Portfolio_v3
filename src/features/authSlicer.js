@@ -18,7 +18,10 @@ const authSlicer = createSlice({
             state.status = true,
             state.userData = action.payload
         },
-        logout:()=>{},
+        logout:(state, action)=>{
+            state.status = false,
+            state.userData = null
+        },
         fgPassword:()=>{}
     }
 })
