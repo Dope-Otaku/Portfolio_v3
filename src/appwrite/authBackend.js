@@ -24,24 +24,23 @@ export class AuthClient {
 
    async login({email, password}){
       try {
-         //check if we are already logged in 
-         const currentUser = await this.getCurrentUserInfo()
-         if(currentUser){
-            console.log("user already logged in :", currentUser)
+         //create a session
+         const newSession = await this.account.createEmailPasswordSession(email, password);
+         console.log("new session created", newSession)
+
+         //check the session and login our user
+         const currentUser = await this.getCurrentUserInfo();
+         if(!currentUser){
+            console.log("user failed to login")
+         }
+         else{
+            console.log("user logged in successfully")
             return currentUser
          }
-         //if no one is logged in then create a new session and login the user
-         const createSession = this.account.createEmailPasswordSession(email, password);
-         if(createSession){
-            console.log("new sessionedUser logged in successfully", createSession)
-            return createSession
-         }else{
-            console.log("user unable to create new sessionID")
-         }
       } catch (error) {
-         console.log("login error: ",error)
-         console.error(error)
-      }      
+         console.log("login error in backend", error)
+         throw error
+      }
    }
 }
 
