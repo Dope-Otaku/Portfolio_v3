@@ -14,7 +14,10 @@ const authSlicer = createSlice({
     name: "auth",
     initialState: authInitialState,
     reducers:{
-        login:()=>{},
+        login:(state, action)=>{
+            state.status = true,
+            state.userData = action.payload
+        },
         logout:()=>{},
         fgPassword:()=>{}
     }
