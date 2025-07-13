@@ -22,7 +22,10 @@ const authSlicer = createSlice({
             state.status = false,
             state.userData = null
         },
-        fgPassword:()=>{}
+        fgPassword:(state, action)=>{
+            state.status = false,
+            state.userData = null
+        }
     }
 })
 
