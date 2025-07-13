@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux"
 import conf from "./creds/conf"
 import authService from "./appwrite/authBackend"
 import { login as authLogin} from "./features/authSlicer"
+import { logout as authLogout} from "./features/authSlicer"
 import { useState } from "react"
 
 
@@ -22,7 +23,21 @@ function App() {
       console.log("Login error:", error);
       setError(error.message || "An error occurred during login.");
     }
+
+    
   }
+  const lgoutHandler = async() =>{
+      try {
+        const loggedOut = await authService.logout()
+        if(loggedOut){
+          console.log("user logged out 200")
+          dispatch(authLogout())// Update Redux store
+          console.log("Redux store updated with user info.");
+        }
+      } catch (error) {
+        console.log("unable to logout", error)
+      }
+    }
   return (
     <>
       {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
@@ -52,8 +67,15 @@ function App() {
                 type="submit"
                 className="w-full"
                 >Sign in</button>
+                
             </div>
         </form>
+        <button
+      className="mt-4 w-full bg-red-500 text-white"
+      onClick={lgoutHandler} // Trigger logout handler
+    >
+      Logout
+    </button>
     </>
   )
 }
