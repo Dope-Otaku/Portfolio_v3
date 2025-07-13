@@ -44,3 +44,7 @@ export class AuthClient {
       }      
    }
 }
+
+
+const authService = new AuthClient();
+export default authService
