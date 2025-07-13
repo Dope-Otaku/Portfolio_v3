@@ -42,6 +42,18 @@ export class AuthClient {
          throw error
       }
    }
+
+   async logout(){
+      try {
+         //directly logout
+         this.account.deleteSessions()
+         console.log("user logged out!")
+         
+      } catch (error) {
+         console.log("logout error"), error
+         throw error
+      }
+   }
 }
 
 
