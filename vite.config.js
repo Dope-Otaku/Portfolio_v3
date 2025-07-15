@@ -5,10 +5,10 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // server:{
-  //   proxy:{
-  //     "/login":"http://localhost:5173/",
-  //     "fpswd":"http://localhost:5173/"
-  //   }
-  // }
+  server:{
+    proxy:{
+      "/api//login":"http://localhost:5173/",
+      "/api/fpswd":"http://localhost:5173/"
+    }
+  }
 })
