@@ -54,6 +54,21 @@ export class AuthClient {
          throw error
       }
    }
+
+   async forgotPswd({email, recoveryEndPoint}){
+      try {
+         const recoveryInitiated = await this.account.createRecovery(email, recoveryEndPoint)
+         if(recoveryInitiated){
+            console.log(`recovery email sent to user ${email}`)
+         }
+         else{
+            console.log(`recovery failed for user: ${email}`)
+         }
+      } catch (error) {
+         console.log(error)
+         throw error
+      }
+   }
 }
 
 
