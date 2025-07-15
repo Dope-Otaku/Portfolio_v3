@@ -1,5 +1,7 @@
 import Login from "./Login"
 import ForgotPassword from "./ForgotPassword"
+import ForgotPasswordRecovery from "./ForgotPasswordRecovery"
+import { Outlet } from "react-router-dom"
 
 
 
@@ -8,8 +10,9 @@ function App() {
   
   return (
     <>
-      <Login/>
+      {/* <Login/> */}
       <ForgotPassword/>
+      <Outlet/>
     </>
   )
 }

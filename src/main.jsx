@@ -7,6 +7,7 @@ import mainStore from './store/store.js'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Login from "./Login"
 import ForgotPassword from "./ForgotPassword"
+import ForgotPasswordRecovery from './ForgotPasswordRecovery.jsx'
 
 const routerFn = createBrowserRouter([
     {
@@ -20,7 +21,11 @@ const routerFn = createBrowserRouter([
         {
           path: "fpswd",
           element: <ForgotPassword/>
-        }
+        },
+        {
+              path: "api/recovery",
+              element: <ForgotPasswordRecovery/>
+            }
       ]
     },
   ])

@@ -14,7 +14,7 @@ function ForgotPassword() {
     const handleForgotPassword = async(e) =>{
         e.preventDefault();
         try {
-            const recoveryStarted = authService.forgotPswd(email, `${conf.appWritezreverseProxyId}/api/fpswd`)
+            const recoveryStarted = authService.forgotPswd(email, `${conf.appWritezreverseProxyId}/api/recovery`)
             if(recoveryStarted){
                 console.log("recovery of email started!")
                 setMessage("recovery mail sent successfully!")

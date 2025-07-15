@@ -8,7 +8,8 @@ export default defineConfig({
   server:{
     proxy:{
       "/api//login":"http://localhost:5173/",
-      "/api/fpswd":"http://localhost:5173/"
+      "/api/fpswd":"http://localhost:5173/",
+      // "/api/recovery":"http://localhost:5173/"
     }
   }
 })
