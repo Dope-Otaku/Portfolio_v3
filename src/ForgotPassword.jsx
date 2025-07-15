@@ -1,30 +1,42 @@
 import React, { useState } from "react";
-// import authService from "./appwrite/authBackend"; // Import your AuthClient service
+import { useDispatch } from "react-redux"
+import conf from "./creds/conf"
+import authService from "./appwrite/authBackend"
+import { fgPassword as fgPswd} from "./features/authSlicer"
 
 function ForgotPassword() {
   const [email, setEmail] = useState(""); // State to store the email input
   const [message, setMessage] = useState(""); // State to store success/error messages
   const [error, setError] = useState(""); // State to store error messages
 
-//   const handleForgotPassword = async (e) => {
-//     e.preventDefault(); // Prevent form submission refresh
-//     try {
-//       const recovery = await authService.createRecovery(email, "https://your-redirect-url.com/recovery"); // Replace with your redirect URL
-//       console.log("Password recovery initiated:", recovery);
-//       setMessage("Recovery email sent successfully. Please check your inbox.");
-//       setError(""); // Clear any previous errors
-//     } catch (error) {
-//       console.log("Error initiating password recovery:", error);
-//       setMessage(""); // Clear any previous success messages
-//       setError(error.message || "An error occurred while sending recovery email.");
-//     }
-//   };
+
+  const dispatch = useDispatch()
+    const handleForgotPassword = async(e) =>{
+        e.preventDefault();
+        try {
+            const recoveryStarted = authService.forgotPswd(email, `${conf.appWritezreverseProxyId}/api/fpswd`)
+            if(recoveryStarted){
+                console.log("recovery of email started!")
+                setMessage("recovery mail sent successfully!")
+                setError("")
+                if(error){
+                    setMessage("")
+                    setMessage(error)
+                }
+                dispatch(fgPswd(email))
+            }
+        } catch (error) {
+            console.log(error)
+            setMessage("")
+            setError(error.message)
+        }
+}
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-3xl font-bold mb-6">Forgot Password</h1>
       <form
-        // onSubmit={handleForgotPassword}
+        onSubmit={handleForgotPassword}
         className="bg-white p-8 rounded shadow-md w-96 space-y-4"
       >
         <div>
@@ -36,7 +48,7 @@ function ForgotPassword() {
             type="email"
             placeholder="Enter your email"
             value={email}
-            // onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
           />

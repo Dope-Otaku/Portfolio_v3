@@ -14,15 +14,15 @@ const routerFn = createBrowserRouter([
       element: <App/>,
       children: [
         {
-          path: "/login",
+          path: "login",
           element: <Login/>
         },
         {
-          path: "/fpswd",
+          path: "fpswd",
           element: <ForgotPassword/>
         }
       ]
-    },{}
+    },
   ])
 
 

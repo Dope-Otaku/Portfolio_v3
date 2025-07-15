@@ -55,7 +55,7 @@ export class AuthClient {
       }
    }
 
-   async forgotPswd({email, recoveryEndPoint}){
+   async forgotPswd(email, recoveryEndPoint){
       try {
          const recoveryInitiated = await this.account.createRecovery(email, recoveryEndPoint)
          if(recoveryInitiated){
