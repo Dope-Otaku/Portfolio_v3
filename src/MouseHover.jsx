@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function MouseHover() {
+function useMouseHover() {
     const [mouseMover, setMouseMover] = useState({
         x:null, y:null
     })
+
+    useEffect(()=>{
+        const updatePointer = setMouseMover({x:event.clientX, y:event.clientY})
+        window.addEventListener('mousemove',updatePointer)
+
+        return()=>{
+            window.removeEventListener('mousemove',updatePointer)
+        }
+    },[])
+
+
   return (
-    <div>MouseHover</div>
+    mouseMover
   )
 }
 
-export default MouseHover
+export default useMouseHover
