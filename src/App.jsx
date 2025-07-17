@@ -12,18 +12,25 @@ function App() {
   
   return (
     <>
-      {/* ok so now we are going to change our home page and addding all these functions besides
-      this because the only thing we needed was auth which took time but it did and now we need to
-      add post also */}
-      {/* <Login/> */}
-      <div>
-        {x !== null && y !== null ? `Your cursor is at ${x}, ${y}.` : "Move your mouse around."}
+      {/* Display cursor position */}
+      {x !== null && y !== null ? `Your cursor is at ${x}, ${y}.` : "Move your mouse around."}
+
+      {/* Container with Tailwind CSS */}
+      <div className="w-screen h-screen bg-black relative overflow-hidden">
+        <p>Move your mouse over this area.</p>
+        <div
+          className="absolute w-10 h-10 bg-transparent border border-white rounded-full pointer-events-none shadow-[0_0_10px_3px_rgba(255,255,255,0.5)]"
+          style={{
+            left: `${x}px`,
+            top: `${y}px`,
+            transform: "translate(-50%, -50%)", // Custom inline style for translate
+          }}
+        />
       </div>
 
-      {/* another day missed but we are still going to implement one thing */}
-      
-      <ForgotPassword/>
-      <Outlet/>
+      {/* Additional components */}
+      {/* <ForgotPassword />
+      <Outlet /> */}
     </>
   )
 }
