@@ -14,6 +14,8 @@ function App() {
       this because the only thing we needed was auth which took time but it did and now we need to
       add post also */}
       {/* <Login/> */}
+
+      {/* another day missed but we are still going to implement one thing */}
       <ForgotPassword/>
       <Outlet/>
     </>
