@@ -30,6 +30,7 @@ function App() {
 
       {/* Additional components */}
       {/* <ForgotPassword />
+      New line added
       <Outlet /> */}
     </>
   )
