@@ -27,7 +27,7 @@ function App() {
           }}
         />
       </div>
-
+{/* <head></head> */}
       {/* <ForgotPassword />
       <Outlet /> */}
     </>
