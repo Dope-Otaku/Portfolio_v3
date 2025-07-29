@@ -30,6 +30,7 @@ function App() {
         </div>
       </div>
       {/* <ForgotPassword />
+      /need to add routin
       <Outlet /> */}
     </>
   )
