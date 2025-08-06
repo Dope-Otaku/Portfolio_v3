@@ -26,7 +26,7 @@ function App() {
           Recruiter
         </div>
         <div className="relative z-10 w-1/5 h-60 bg-blue-500/20 cursor-pointer backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl flex items-center justify-center text-blue-600 font-bold text-xl hover:bg-blue-500/30 transition-all duration-300">
-          Developer
+          Developers
         </div>
       </div>
       {/* <ForgotPassword />
