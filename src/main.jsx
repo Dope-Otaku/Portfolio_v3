@@ -8,6 +8,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Login from "./Login"
 import ForgotPassword from "./ForgotPassword"
 import ForgotPasswordRecovery from './ForgotPasswordRecovery.jsx'
+// import { BrowserRouter, Route } from "react-router-dom"
+import Developer from './Developer.jsx'
+import Recruiter from './Recruiter.jsx'
 
 const routerFn = createBrowserRouter([
     {
@@ -26,8 +29,17 @@ const routerFn = createBrowserRouter([
               path: "api/recovery",
               element: <ForgotPasswordRecovery/>
             }
+        
       ]
     },
+    {
+      path: "/developer",
+      element: <Developer/>
+    },
+    {
+      path: "/recruiter",
+      element: <Recruiter/>
+    }
   ])
 
 
