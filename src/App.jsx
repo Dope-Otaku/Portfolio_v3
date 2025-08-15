@@ -35,10 +35,10 @@ function App() {
         <div className="absolute inset-0 bg-black/10"></div>
         
         <div onClick={goRecruiter} className="relative z-10 w-1/5 h-60 bg-red-500/20 cursor-pointer backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl flex items-center justify-center text-red-600 font-bold text-xl hover:bg-red-500/30 transition-all duration-300">
-          <Link to="/recruiter">Recruiter</Link>
+          Recruiter
         </div>
         <div onClick={goDeveloper} className="relative z-10 w-1/5 h-60 bg-blue-500/20 cursor-pointer backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl flex items-center justify-center text-blue-600 font-bold text-xl hover:bg-blue-500/30 transition-all duration-300">
-          <Link to="/developer">Developers</Link>
+          Developers
         </div>
       </div>
       {/* <ForgotPassword />*/}
