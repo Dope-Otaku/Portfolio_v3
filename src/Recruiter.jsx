@@ -2,7 +2,9 @@ import React from 'react'
 
 function Recruiter() {
   return (
-    <div>Recruiter</div>
+    <>
+        <h1>What should i add here?</h1>
+    </>
   )
 }
 
