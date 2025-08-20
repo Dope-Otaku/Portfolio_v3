@@ -3,11 +3,24 @@ import React from 'react'
 function Developer() {
   return (
     <>
-        <h1>Developer</h1>
-        <span>need to add developer like effect in these</span>
-        <div>Developer section name</div>
-        <div>terminal</div>
-        <div>id card</div>
+        <div class="flex h-screen">
+        {/* <!-- Left Column --> */}
+        <div class="w-1/2 flex flex-col">
+            {/* <!-- Developer Section --> */}
+            <div class="h-1/2 bg-blue-500 flex items-center justify-center">
+            <span class="text-white text-lg font-bold">Developer Section Name</span>
+            </div>
+            {/* <!-- ID Card Section --> */}
+            <div class="h-1/2 bg-green-500 flex items-center justify-center">
+            <span class="text-white text-lg font-bold">ID Card</span>
+            </div>
+        </div>
+
+        {/* <!-- Right Column --> */}
+        <div class="w-1/2 bg-gray-800 flex items-center justify-center">
+            <span class="text-white text-lg font-bold">Terminal</span>
+        </div>
+        </div>
     </>
   )
 }
