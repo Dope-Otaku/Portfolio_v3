@@ -8,9 +8,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Login from "./Login"
 import ForgotPassword from "./ForgotPassword"
 import ForgotPasswordRecovery from './ForgotPasswordRecovery.jsx'
+import Developer from './components/Developer/Developer.jsx'
+import Recruiter from './components/Recruiter/Recruiter.jsx'
 // import { BrowserRouter, Route } from "react-router-dom"
-import Developer from './Developer.jsx'
-import Recruiter from './Recruiter.jsx'
+
 
 const routerFn = createBrowserRouter([
     {

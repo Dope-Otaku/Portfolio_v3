@@ -53,7 +53,7 @@ function Terminal() {
         padding: "20px",
         borderRadius: "8px",
         width: "80%",
-        height: "400px",
+        height: "800px",
         overflowY: "auto",
         margin: "0 auto",
       }}
