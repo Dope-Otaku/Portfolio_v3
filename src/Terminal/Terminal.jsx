@@ -31,6 +31,7 @@ function Terminal() {
                     output = `Command not found: ${command}`;
                 }
         }
+        setHistory((prev)=> [...prev, {command, output}])       //this line is imp to store the history
     }
 
 
