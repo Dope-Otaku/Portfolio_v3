@@ -9,15 +9,15 @@ function Terminal() {
 
         switch (command.trim()) {
             case "help":
-                output: "Welcome to Help section!"
+                output = "Welcome to Help section!"
                 break;
 
             case "whoami":
-                output: "I am the king of laziness!"
+                output = "I am the king of laziness!"
                 break;
 
             case "delete":
-                output: "you better watch it out Bitch!"
+                output = "you better watch it out Bitch!"
                 break;
             case "clear":
                 setHistory([])
@@ -34,9 +34,61 @@ function Terminal() {
         setHistory((prev)=> [...prev, {command, output}])       //this line is imp to store the history
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(currentInput.trim() !== ""){
+            handleCommand(currentInput)
+            setCurrentInput("")
+        }
+    }
+
 
   return (
-    <>Terminal Loading...</>
+    <div
+      className="terminal-container"
+      style={{
+        backgroundColor: "black",
+        color: "green",
+        fontFamily: "monospace",
+        padding: "20px",
+        borderRadius: "8px",
+        width: "80%",
+        height: "400px",
+        overflowY: "auto",
+        margin: "0 auto",
+      }}
+    >
+      {/* Display command history */}
+      <div>
+        {history.map((entry, index) => (
+          <div key={index}>
+            <div>
+              <span style={{ color: "lightgreen" }}>$ </span>
+              {entry.command}
+            </div>
+            <div>{entry.output}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Input field */}
+      <form onSubmit={handleSubmit} style={{ marginTop: "10px" }}>
+        <span style={{ color: "lightgreen" }}>$ </span>
+        <input
+          type="text"
+          value={currentInput}
+          onChange={(e) => setCurrentInput(e.target.value)}
+          style={{
+            backgroundColor: "black",
+            color: "green",
+            border: "none",
+            outline: "none",
+            width: "90%",
+          }}
+          autoFocus
+        />
+      </form>
+    </div>
   )
 }
 
