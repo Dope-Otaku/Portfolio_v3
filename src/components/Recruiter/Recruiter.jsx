@@ -5,7 +5,7 @@ function Recruiter() {
     <>
         <h1>What should i add here?</h1>
         <span>but when?</span>
-        <h3>I guess we need to add some cool design with my experience and projects</h3>
+        <h3>I guess we need to add some cool design with my experience and projects!</h3>
     </>
   )
 }
