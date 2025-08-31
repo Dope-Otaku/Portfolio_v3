@@ -7,6 +7,7 @@ function Recruiter() {
         <span>but when?</span>
         <h3>I guess we need to add some cool design with my experience and projects!</h3>
         <h3>deadline finished and still this is not complete!</h3>
+        <h3>deadline finished and still this is not complete!</h3>
     </>
   )
 }
